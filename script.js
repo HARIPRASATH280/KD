@@ -209,14 +209,9 @@ window.addEventListener("keydown", (event) => {
 });
 
 const setupAudio = () => {
-  const audioExists = !!document.querySelector("audio");
-  if (!audioExists) return;
+  if (!musicToggle) return;
 
-  const audioSource = document.createElement("source");
-  audioSource.src = MUSIC_FILE;
-  audioSource.type = "audio/mpeg";
-  audio.appendChild(audioSource);
-
+  audio.src = MUSIC_FILE;
   let isPlaying = false;
 
   const updateMusicState = () => {
@@ -227,8 +222,6 @@ const setupAudio = () => {
   musicToggle.addEventListener("click", async () => {
     try {
       if (!isPlaying) {
-        audio.src = MUSIC_FILE;
-        audio.load();
         await audio.play();
         isPlaying = true;
       } else {
@@ -237,18 +230,24 @@ const setupAudio = () => {
       }
       updateMusicState();
     } catch (error) {
-      console.warn("Audio interaction was blocked or file is missing:", error);
+      console.warn(
+        "Audio interaction was blocked or the file is missing:",
+        error,
+      );
       isPlaying = false;
       updateMusicState();
     }
   });
 
+  audio.addEventListener("ended", () => {
+    isPlaying = false;
+    updateMusicState();
+  });
+
   audio.addEventListener("error", () => {
     musicToggle.style.display = "none";
     musicToggle.setAttribute("aria-hidden", "true");
-    console.warn(
-      "Music file missing or failed to load. The site continues without music.",
-    );
+    console.warn("Music file is missing or failed to load.");
   });
 
   updateMusicState();
