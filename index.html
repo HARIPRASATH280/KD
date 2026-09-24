@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="A cinematic birthday surprise story website celebrating a childhood friendship."
+    />
+    <title>Birthday Surprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <button class="music-toggle" aria-label="Toggle music" type="button">
+      <span class="music-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span class="music-label">Music</span>
+    </button>
+
+    <div class="progress-indicator" aria-live="polite">
+      <span id="progress-current">01</span>
+      <span class="divider">/</span>
+      <span id="progress-total">16</span>
+    </div>
+
+    <main class="story" aria-label="Birthday story">
+      <section class="scene scene-intro active" id="scene-1" data-scene="1">
+        <div class="scene-inner intro-inner">
+          <p class="mini-text small fade-up">Every story has a beginning...</p>
+          <h1 class="display large fade-up delay-1">
+            Ours started much earlier than we knew.
+          </h1>
+          <div class="chapter-block fade-up delay-2">
+            <span class="chapter">Class 2</span>
+          </div>
+          <button
+            class="primary-button fade-up delay-3"
+            type="button"
+            data-begin
+          >
+            Begin the story →
+          </button>
+        </div>
+      </section>
+
+      <section class="scene scene-chess" id="scene-2" data-scene="2">
+        <div class="scene-inner narrow">
+          <div class="chess-backdrop" aria-hidden="true">
+            <div class="piece-ambient black-king-ambient"></div>
+            <div class="piece-ambient white-queen-ambient"></div>
+          </div>
+
+          <p class="eyebrow">Class 2</p>
+          <h2 class="title">Two different minds.</h2>
+          <h2 class="title muted">Two different perspectives.</h2>
+          <h2 class="title soft">And way too much ego.</h2>
+
+          <div class="chess-board" aria-hidden="true">
+            <div class="chess-piece black-king piece-one"></div>
+            <div class="chess-piece white-queen piece-two"></div>
+            <div class="chess-line"></div>
+          </div>
+
+          <div class="stack-lines">
+            <p>We fought.</p>
+            <p>We argued.</p>
+            <p>Even our teacher had to step in.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-silence" id="scene-3" data-scene="3">
+        <div class="scene-inner center">
+          <p class="mini-text">Then...</p>
+          <h2 class="big-number">2 YEARS</h2>
+          <p class="muted-copy">We didn't even see each other.</p>
+        </div>
+      </section>
+
+      <section class="scene scene-bus" id="scene-4" data-scene="4">
+        <div class="scene-inner narrow">
+          <p class="eyebrow">Class 8</p>
+          <h2 class="title">Same school.</h2>
+          <h2 class="title muted">Different blocks.</h2>
+
+          <div class="bus-scene" aria-hidden="true">
+            <div class="street"></div>
+            <div class="bus-stop">
+              <span class="stop-dot"></span>
+            </div>
+            <div class="bus-glow"></div>
+          </div>
+
+          <div class="clock-mark">4:30 PM</div>
+          <div class="stack-lines small-stack">
+            <p>A few minutes.</p>
+            <p>A simple goodbye.</p>
+            <p>Somehow... it mattered.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-covid" id="scene-5" data-scene="5">
+        <div class="scene-inner center">
+          <p class="mini-text">Then the world stopped.</p>
+          <h2 class="display">COVID.</h2>
+          <p class="muted-copy">Those little moments disappeared.</p>
+        </div>
+      </section>
+
+      <section class="scene scene-reunion" id="scene-6" data-scene="6">
+        <div class="scene-inner narrow center">
+          <p class="eyebrow">10th standard</p>
+          <h2 class="title">My uncle's function.</h2>
+          <p class="mini-text">Pause.</p>
+          <h2 class="title highlight">And suddenly...</h2>
+          <p class="mini-text">Pause.</p>
+          <h2 class="title large-title">There you were.</h2>
+        </div>
+      </section>
+
+      <section class="scene scene-photo" id="scene-7" data-scene="7">
+        <div class="scene-inner wide">
+          <div class="caption-top">
+            <span>2016 — 2017</span>
+          </div>
+          <div class="photo-card childhood-card" data-lightbox-trigger>
+            <img src="assets/childhood.jpg" alt="Childhood school photo" />
+          </div>
+          <div class="photo-copy">
+            <p>Before we knew what this picture would mean...</p>
+            <p>We were just kids.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-nov19" id="scene-8" data-scene="8">
+        <div class="scene-inner narrow">
+          <div class="calendar" aria-label="November 19 calendar">
+            <span class="month">November</span>
+            <span class="date">19</span>
+          </div>
+
+          <div class="thread-block">
+            <p>I went to my friend's class.</p>
+            <p>He asked for my Instagram ID.</p>
+            <p class="pause-line">Pause.</p>
+            <p>She asked for it.</p>
+          </div>
+
+          <div class="notification-card">
+            <span class="notify-dot"></span>
+            <span>New request</span>
+          </div>
+
+          <div class="thread-block">
+            <p>Apparently... she had searched for me.</p>
+          </div>
+
+          <div class="bubble-stack" aria-label="Message bubbles">
+            <span>Text.</span>
+            <span>Text.</span>
+            <span>Call.</span>
+            <span>Memories.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-exam" id="scene-9" data-scene="9">
+        <div class="scene-inner center narrow">
+          <p class="mini-text">Then came the 10th public exam.</p>
+          <h2 class="title">Life moved forward.</h2>
+          <div class="transition-line">11th</div>
+        </div>
+      </section>
+
+      <section class="scene scene-challenge" id="scene-10" data-scene="10">
+        <div class="scene-inner narrow center">
+          <p class="mini-text">She won the challenge.</p>
+          <p class="mini-text">Pause.</p>
+          <h2 class="title">So I had to keep my promise.</h2>
+          <div class="ring-card">
+            <span>One ring.</span>
+            <span>Delivered.</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene scene-timeline-silence"
+        id="scene-11"
+        data-scene="11"
+      >
+        <div class="scene-inner narrow center">
+          <div class="year-line">
+            <span>DAY 1</span>
+            <span class="line"></span>
+            <span>MONTH 1</span>
+            <span class="line"></span>
+            <span>MONTH 6</span>
+            <span class="line"></span>
+            <span>1 YEAR</span>
+          </div>
+
+          <p class="mini-text">Sometimes people don't stop caring.</p>
+          <p class="mini-text">They just stop talking.</p>
+        </div>
+      </section>
+
+      <section class="scene scene-college" id="scene-12" data-scene="12">
+        <div class="scene-inner narrow">
+          <p class="mini-text">Then somehow...</p>
+          <h2 class="title">Same college.</h2>
+          <p class="mini-text">When life got difficult...</p>
+          <p class="mini-text">Pause.</p>
+          <h2 class="title highlight">You were there.</h2>
+          <div class="stack-lines small-stack">
+            <p>You supported me.</p>
+            <p>You motivated me.</p>
+            <p>You helped me keep going.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-milestones" id="scene-13" data-scene="13">
+        <div class="scene-inner narrow center">
+          <div class="milestone-list">
+            <div class="milestone">
+              <span>CLASS 2</span><small>Different minds</small>
+            </div>
+            <div class="milestone">
+              <span>CLASS 5</span><small>Just kids</small>
+            </div>
+            <div class="milestone">
+              <span>CLASS 8</span><small>Goodbyes</small>
+            </div>
+            <div class="milestone">
+              <span>CLASS 10</span><small>Surprise</small>
+            </div>
+            <div class="milestone">
+              <span>11TH</span><small>Promises</small>
+            </div>
+            <div class="milestone">
+              <span>COLLEGE</span><small>Support</small>
+            </div>
+            <div class="milestone">
+              <span>TODAY</span><small>Still here</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-present" id="scene-14" data-scene="14">
+        <div class="scene-inner wide">
+          <div class="photo-card present-card" data-lightbox-trigger>
+            <img src="assets/present.jpg" alt="Recent photo" />
+          </div>
+          <div class="photo-copy present-copy">
+            <p>Years passed.</p>
+            <p>We changed.</p>
+            <p>Life changed.</p>
+            <p>But somehow...</p>
+            <p class="strong">the story kept finding its way back.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-full-circle" id="scene-15" data-scene="15">
+        <div class="scene-inner center wide">
+          <div class="mini-photo-wrap">
+            <img src="assets/childhood.jpg" alt="Childhood memory" />
+          </div>
+          <div class="year-jump">
+            <span>2016</span>
+            <span class="arrow">→</span>
+            <span id="present-year">2026</span>
+          </div>
+          <h2 class="title">Ten years of memories.</h2>
+        </div>
+      </section>
+
+      <section class="scene scene-birthday" id="scene-16" data-scene="16">
+        <div class="scene-inner center narrow">
+          <div class="birthday-dot"></div>
+          <p class="mini-text">One last thing...</p>
+          <h2 class="birthday-title">
+            <span>HAPPY</span>
+            <span>BIRTHDAY</span>
+          </h2>
+          <h3 class="birthday-name" id="birthday-name">DARSANI B</h3>
+          <p class="birthday-message">
+            Thank you for being part of so many chapters of my life.
+          </p>
+          <p class="birthday-message final-line">
+            Some friendships aren't measured by how often we talk,<br />
+            but by how naturally we find our way back.
+          </p>
+          <div class="confetti" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span
+            ><span></span> <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="final-end">
+            <p class="mini-text">THE END?</p>
+            <p class="mini-text">Maybe just another chapter.</p>
+            <p class="mini-text">Happy Birthday ❤️</p>
+            <button class="primary-button replay-button" type="button">
+              Replay our story ↻
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close photo">
+        ×
+      </button>
+      <img src="" alt="Expanded story photo" />
+    </div>
+
+    <audio id="story-audio" preload="none" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
